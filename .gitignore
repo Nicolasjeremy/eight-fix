@@ -1,0 +1,33 @@
+# Node modules
+**/node_modules/
+**/dist/
+**/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Expo & React Native cache
+.expo/
+.expo-shared/
+*.expo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# VS Code settings
+.vscode/
+
+# IDE folders
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS metadata
+__MACOSX/
