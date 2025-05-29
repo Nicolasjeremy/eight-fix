@@ -16,5 +16,9 @@
     "url": "https://github.com/Nicolasjeremy/eight-fix/issues"
   },
   "homepage": "https://github.com/Nicolasjeremy/eight-fix#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@react-navigation/native": "^7.1.9",
+    "@react-navigation/stack": "^7.3.2"
+  }
 }
