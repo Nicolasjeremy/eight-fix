@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.58.82:3001';
+const BASE_URL = 'http://192.168.1.50:3001';
 
 export const fetchConditions = async () => {
   const res = await fetch(`${BASE_URL}/conditions`);

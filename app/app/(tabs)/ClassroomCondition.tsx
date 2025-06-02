@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, ScrollView, SafeAreaView } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { StatusBar } from "expo-status-bar"
+import { fetchConditions } from "../../constants/api"; // Adjust path as needed
 
 interface ConditionData {
   temperature: number
@@ -42,14 +43,19 @@ export default function ClassroomCondition() {
     setConditions(DEFAULT_CONDITIONS)
   }
 
-  const changeValues = () => {
-    const newValues = {
-      temperature: Math.floor(Math.random() * 40),
-      lights: Math.floor(Math.random() * 100),
-      humidity: Math.floor(Math.random() * 100),
-    }
-    setConditions(newValues)
+const changeValues = async () => {
+  try {
+    const data = await fetchConditions();
+    setConditions({
+      temperature: data.temperature,
+      lights: data.lights,
+      humidity: data.humidity,
+    });
+  } catch (error) {
+    console.error("Failed to fetch conditions:", error);
   }
+};
+
 
   return (
     <SafeAreaView style={styles.safeArea}>
